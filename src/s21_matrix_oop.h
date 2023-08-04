@@ -10,12 +10,12 @@ const double EPS = 1e-6;
 class S21Matrix {
  public:
   //  constructors and destructors
-  S21Matrix();   // Default constructor
-  ~S21Matrix();  // Destructor
-  S21Matrix(int rows, int cols);  // Параметризированный конструктор с
-                                  // количеством строк и столбцов
-  S21Matrix(const S21Matrix &other);  // Конструктор копирования
-  S21Matrix(S21Matrix &&other);  // Конструктор переноса
+  S21Matrix();                        // Default constructor
+  ~S21Matrix();                       // Destructor
+  S21Matrix(int rows, int cols);      // Parametrized constructor
+                                      // with number of rows and columns
+  S21Matrix(const S21Matrix &other);  // Copy constructor
+  S21Matrix(S21Matrix &&other);       // Move constructor
 
   // matrix methods
   bool EqMatrix(const S21Matrix &other) const;
@@ -28,7 +28,7 @@ class S21Matrix {
   double Determinant() const;
   S21Matrix InverseMatrix() const;
 
-  // перегрузка операторов
+  // overloads
   S21Matrix operator+(const S21Matrix &other);
   S21Matrix operator-(const S21Matrix &other);
   S21Matrix operator*(const S21Matrix &other);
